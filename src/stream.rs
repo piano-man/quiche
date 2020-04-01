@@ -28,7 +28,6 @@ use std::cmp;
 
 use std::collections::hash_map;
 use std::collections::BinaryHeap;
-use std::collections::HashMap;
 use std::collections::HashSet;
 use std::collections::VecDeque;
 
@@ -43,7 +42,7 @@ const MAX_WRITE_SIZE: usize = 1000;
 #[derive(Default)]
 pub struct StreamMap {
     /// Map of streams indexed by stream ID.
-    streams: HashMap<u64, Stream>,
+    streams: rustc_hash::FxHashMap<u64, Stream>,
 
     /// Set of streams that were completed and garbage collected.
     ///
